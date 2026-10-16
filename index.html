@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+    <main class="container">
+        <h1>My To-Do Task Manager</h1>
+        <p>Organize your day, one task at a time.</p>
+
+        <form id="task-form">
+            <input type="text" id="title" placeholder="Task title (required)" required>
+            <textarea id="description" placeholder="Task description"></textarea>
+
+            <label for="deadline">Deadline</label>
+            <input type="date" id="deadline">
+
+            <label for="priority">Priority</label>
+            <select id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <section class="controls">
+            <input type="search" id="search" placeholder="Search tasks...">
+            <select id="filter">
+                <option value="all">All Tasks</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </section>
+
+        <p id="message" role="status"></p>
+        <section id="task-list" aria-live="polite"></section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
