@@ -10,11 +10,16 @@
     <h1>My To-Do Task Manager</h1>
 
     <form id="task-form">
-        <input id="title" type="text" placeholder="Task title" required>
-        <input id="description" type="text" placeholder="Description">
-        <input id="deadline" type="date">
-        <button type="submit">Add Task</button>
-    </form>
+  <input id="title" type="text" placeholder="Task title" required>
+  <input id="description" type="text" placeholder="Description">
+  <input id="deadline" type="date">
+  <select id="priority">
+    <option value="Low">Low Priority</option>
+    <option value="Medium" selected>Medium Priority</option>
+    <option value="High">High Priority</option>
+  </select>
+  <button type="submit">Add Task</button>
+</form>
 
     <select id="filter">
         <option value="all">All Tasks</option>
